@@ -87,3 +87,9 @@ gitlab_rails['omniauth_providers'] = [
 ```
 kubectl apply -f grafana.yml
 ```
+
+## Install oauth2-proxy
+
+```
+kubectl apply -f oauth2_proxy.yml
+```
