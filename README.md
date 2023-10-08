@@ -19,3 +19,13 @@ cd terraform-keycloak
 terraform init
 terraform apply
 ```
+
+## Configure SSO in ArgoCD
+
+```
+kubectl apply -f argocd-config.yml
+```
+
+```
+kubectl rollout restart -n argocd deployment argocd-server
+```
