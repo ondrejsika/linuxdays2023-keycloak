@@ -93,3 +93,9 @@ kubectl apply -f grafana.yml
 ```
 kubectl apply -f oauth2_proxy.yml
 ```
+
+## Install Example App Behind oauth2-proxy
+
+```
+kubectl apply -f oauth2_proxy_example.yml
+```
