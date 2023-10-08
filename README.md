@@ -11,3 +11,11 @@ slu scripts kubernetes install-argocd --domain argocd.linuxdays.sikademo.com
 ```
 kubectl apply -f keycloak.yml
 ```
+
+## Configure Keycloak using Terraform
+
+```
+cd terraform-keycloak
+terraform init
+terraform apply
+```
