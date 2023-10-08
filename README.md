@@ -1,5 +1,9 @@
 # linuxdays2023-keycloak
 
+Slides:
+  - PDF - https://raw.githubusercontent.com/ondrejsika/slides/master/2023-10-08_LinuxDays/LinuxDays_2023__Keycloak__Open_Source_Single_Sign_On_pro_kazdeho__2023-10-08.pdf
+  - Google Slides - https://docs.google.com/presentation/d/1NtWtPCT7FvaivztOQzvuue8UfmBA6wdSq-7NwYPIK7c/edit
+
 ## Install ArgoCD
 
 ```
