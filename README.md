@@ -81,3 +81,9 @@ gitlab_rails['omniauth_providers'] = [
   }
 ]
 ```
+
+## Install Grafana with SSO
+
+```
+kubectl apply -f grafana.yml
+```
