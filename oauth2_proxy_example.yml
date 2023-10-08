@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: oauth2-proxy-example
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: oauth2-proxy-example
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  source:
+    repoURL: https://github.com/sikalabs/charts.git
+    targetRevision: HEAD
+    path: charts/one-image
+    helm:
+      releaseName: oauth2-proxy-example
+      values: |
+        host: example.linuxdays.sikademo.com
+        image: sikalabs/hello-world-server
+        containerPort: 8000
+        TEXT: "Hello LinuxDays2023!"
+        ingressExtraAnnotations:
+          nginx.ingress.kubernetes.io/auth-url: "https://oauth2-proxy.linuxdays.sikademo.com/oauth2/auth"
+          nginx.ingress.kubernetes.io/auth-signin: "https://oauth2-proxy.linuxdays.sikademo.com/oauth2/start?rd=https://$host$request_uri"
+          nginx.ingress.kubernetes.io/proxy-body-size: 512m
+          nginx.ingress.kubernetes.io/proxy-buffer-size: "128k"
